@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	line-height: 1.5;
+	font-family: var(--font-openSans);
+	text-underline-offset: 4px;
+	color: theme("colors.gray-400");
+	transition: color 0.1s ease-in-out, background-color 0.2s ease-in-out;
+	box-sizing: content-box;
+}
+
+html[class="dark"] {
+	--bg: theme("colors.gray-900");
+	--heading-color: theme("colors.gray-50");
+	--text-color: theme("colors.gray-200");
+	--text-color-bold: theme("colors.gray-50");
+	--text-hover-link: theme("colors.primary-dark");
+}
+
+
+html[class="light"] {
+	--bg: theme("colors.gray-0");
+	--heading-color: theme("colors.gray-700");
+	--text-color: theme("colors.gray-700");
+	--text-color-bold: theme("colors.gray-900");
+	--text-hover-link: theme("colors.primary-light");
+}
+
+html {
+	background-color: var(--bg);
+}
+
+h1, h2, h3, h4, path, button {
+	color: var(--heading-color);
+	line-height: 1.25;
+}
+
+h1 {
+	font-size: theme("fontSize.h1");
+}
+
+h2 {
+	font-size: theme("fontSize.h2");
+}
+
+h3 {
+	font-size: theme("fontSize.h3");
+}
+
+h4 {
+	font-size: theme("fontSize.h4");
+}
+
+ p, u, span, li, input, button, label, select, option, textarea {
+	font-size: theme("fontSize.body");
+	color: var(--text-color);
+}
+
+b, a {
+	font-size: theme("fontSize.body");
+	color: var(--text-color-bold);
+	font-weight: bold;
+}
+
+span {
+	color: inherit;
+}
+
+.progress-bar {
+  height: 2px;
+  background: var(--text-color);
+  transform-origin: 0%;
+}
+
+input, textarea {
+	background-color: transparent;
+	border: 1px solid theme("colors.gray-700");
+	border-left: 0;
+	border-right: 0;
+	border-top: 0;
+	padding: 0.5rem;
+	color: var(--heading-color)
+}
+
+a:hover {
+	transition: color 0.1s ease-in-out;
+	color: var(--text-hover-link);
+}
+
+input:focus, textarea:focus {
+	outline: none;
+	border-color: theme("colors.primary-main");
+}
+
+*::-webkit-scrollbar{
+	width:0.1rem;
+	background-color: var(--bg);
+}
+
+*::-webkit-scrollbar-thumb{
+	background-color: var(--bg);
+}
+
+.alter-section:nth-child(even) {
+	flex-direction: row-reverse;
+	@media (max-width: 984px) {
+		flex-direction: column-reverse;
+	}
+}
